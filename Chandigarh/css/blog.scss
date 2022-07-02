@@ -1,0 +1,96 @@
+@import './global';
+@import './header';
+@import './login';
+@import './footer';
+
+main{
+    
+    .row-1{
+        height: 88vh;
+
+        .innerBlogContainer{
+            width: 140rem;
+            height: 80rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin-top: 1rem;
+                .blog{
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+                    position: relative;
+                    display: block;
+                    top: 0;
+                    color: #000;
+                    transition: all .1s;
+    
+                    .blogImg{
+                        height: 75%;
+                        overflow: hidden;
+    
+                        img{
+                            width: 100%;
+                            transition: all 1s;
+                            &:hover{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+    
+                    .blogData{
+                        height: 25%;
+                        display: grid;
+                        grid-template-columns: repeat(10,1fr);
+                        grid-template-rows: repeat(4,1fr);
+                        overflow: hidden;
+
+    
+                        h1{
+                            grid-column: 1 / 11;
+                            grid-row: 1 / 2;
+                            display: block;
+                            padding: .8rem 1rem 0;
+                            font-size: 2.8rem;
+    
+                            span{
+                                float: right;
+                                font-size: 1.7rem;
+                                padding: .5rem;
+                                color: rgb(73, 73, 73);
+                            }
+                        }
+                        p{
+                            grid-column: 1 / 10;
+                            grid-row: 2 / 5;
+                            display: block;
+                            padding: .5rem 1rem;
+                            color: rgb(73, 73, 73);
+                            overflow-y: auto;
+                        }
+                        div{
+                            grid-column: 10 / 11;
+                            grid-row: 3 / 4;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            flex-direction: column-reverse;
+    
+                            span{
+                                font-weight: 600;
+                            }
+                            img{
+                                width: 4rem;
+                                height: 5rem;
+                                border-radius: 50%;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    
+}

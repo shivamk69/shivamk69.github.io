@@ -1,0 +1,74 @@
+@import './global';
+@import './header';
+@import './login';
+@import './footer';
+
+main{
+    height: 92.5vh;
+    background: rgb(155, 153, 153);
+
+    form{
+        width: 50rem;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 1.5rem 2rem;
+        background: rgba(255, 255, 255, 0.87);
+        border-radius: 1rem;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+
+        .form-row{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: .5rem 0;
+            padding: 1rem 0;
+        
+            label{
+                display: block;
+                width: 100%;
+                font-weight: 600;
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            input,textarea{
+                width: 100%;
+                padding: .8rem 1rem;
+                border: none;
+                outline: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+                font-size: 1.6rem;
+                color: rgb(53, 53, 53);
+                border-radius: .5rem;
+            }
+            input[type="file"]{
+                background: #fff;
+            }
+            textarea{
+                height: 10rem;
+            }
+            input[type="submit"]{
+                width: 50%;
+                border-radius: 3rem;
+                background: var(--blue);
+                transition: all .3s ease-in;
+                cursor: pointer;
+                color: #fff;
+                font-weight: 700;
+                font-size: 1.8rem;
+                padding: 1rem;
+                margin-top: 2rem;
+                
+                &:hover{
+                    background: var(--blueHover);
+                }
+            }
+        }
+    }
+
+}
