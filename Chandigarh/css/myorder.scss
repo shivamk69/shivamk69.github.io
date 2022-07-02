@@ -1,0 +1,15 @@
+@import './global';
+@import './header';
+@import './login';
+@import './footer';
+
+main{
+    h1{
+        margin-top: 30rem;
+        display: block;
+        width: 100%;
+        font-size: 10rem;
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+    }
+}
