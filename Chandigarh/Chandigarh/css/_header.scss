@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&family=Yusei+Magic&display=swap');
+
+header{
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -1px 10px rgba(0, 0, 0, .2);
+    user-select: none;
+    background: rgba(212, 212, 212,.3);
+
+    .left-container{
+        flex-basis: 45%;
+        padding: 0 1rem 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo{
+            display: block;
+            position: relative;
+            left: 1.5rem;
+            cursor: pointer;
+            width: 30rem;
+
+            img{
+                width: 100%;
+            }
+        }
+        .search-bar{
+            #search-form{
+                width: 22rem;
+                height: 4rem;
+                position: relative;
+                border-radius: 2rem;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+                input{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    outline: none;
+                    padding: 1rem 4.4rem 1rem 1.6rem;
+                    border-radius: 2rem;
+                    font-size: 1.5rem;
+                    // border: 1px solid #000;
+                    border: none;
+
+                    &::placeholder{
+                        font-weight: 600;
+                        color: rgba(0, 0, 0, .4);
+                    }
+                }
+                span{
+                    height: 100%;
+                    width: 4rem;
+                    position: absolute;
+                    right: 0;
+                    padding: 1rem 1rem 1rem .7rem;
+                    border-radius: 0 2rem 2rem 0;
+                    cursor: pointer;
+                    // border: 1px solid #000;
+
+                    i{
+                        font-size: 1.8rem;
+                        transition: all .2s ease-in;
+
+                        // &:focus{
+                        //     color: red;
+                        // }
+                    }
+
+                    &:hover i{
+                        color: aqua;
+                    }
+                }
+            }
+        }
+        .help{
+            position: relative;
+            top: -1rem;
+            font-size: 1.7rem;
+            height: 3rem;
+
+            #google_translate_element{
+                display: inline-block;
+                height: 100%;
+                padding: .5rem;
+                box-shadow: 0 0 8px rgba(0,0,0,0.5);
+                *{
+                    border: none;
+                    
+                }
+                &:hover{
+                    box-shadow: none;
+                    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+                }
+            }
+        }
+    }
+    .right-container{
+        width: 100%;
+        height: 100%;
+        flex-basis: 55%;
+        display: flex;
+        position: relative;
+
+        .login-section{
+            width: 100%;
+            padding:0 5rem 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            visibility: visible;
+            opacity: 1;
+
+            .buttons{
+                position: relative;
+                top: -1rem;
+                font-size: 1.7rem;
+
+                a{
+                    display: inline-block;
+                    margin-right: 2rem;
+                    padding: .5rem 1rem;
+                    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+                    transition: box-shadow .4s;
+
+                    &:hover{
+                        box-shadow: none;
+                        box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+                        background: var(--blue);
+                    }
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .profile-section{
+                display: flex;
+
+                .info{
+                    text-align: center;
+                    margin-right: 1rem;
+                    align-self: center;
+
+                    span{
+                        font-size: 2.8rem;
+                        font-family: 'Potta One', cursive;
+                    }
+                    p{
+                        margin-top: -.5rem;
+                        font-size: 1.7rem;
+                        font-family: 'Yusei Magic', sans-serif;
+                    }
+                }
+                .p-pic{
+                    width: 5rem;
+                    height: 6rem;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .logout{
+                width: 10rem;
+                position: relative;
+                font-size: 2.2rem;
+                color: red;
+                font-weight: 700;
+                transition: all .3s ease-in;
+
+                &:hover{
+                    letter-spacing: .2rem;
+                }
+            }
+        }
+        .logout-section{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            position: absolute;
+            visibility: visible;
+            opacity: 1;
+
+            a{
+                position: absolute;
+                bottom: 2rem;
+                right: 10rem;
+                font-size: 2rem;
+                padding: .5rem;
+                font-weight: 800;
+                transition: all .5s;
+                cursor: pointer;
+                
+                span{
+                    font-size: 2.5rem;
+                    display: inline-block;
+                    transition: all .5s;
+                }
+
+                &:hover span{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+    .bar{
+        width: 3rem;
+        height: 3rem;
+        display: none;
+        margin-right: 5rem;
+        margin-left: 3rem;
+        border: 1px solid #000;
+        
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
+    }
+}
+
+.active{
+    background: var(--blue);
+}
+
+
+// ------------ Responsive ------------
+@media (max-width:1700px){
+    header{
+        .left-container{
+            .logo{
+                left: 0rem;
+                width: 27rem;
+            }
+            .search-bar{
+                #search-form{
+                    width: 20rem;
+                }
+            }
+            .help{
+                font-size: 1.7rem;   
+            }
+        }
+    }
+}
+@media (max-width:1550px){
+    header{
+        .left-container{
+            .logo{
+                width: 25rem;
+            }
+            .search-bar{
+                #search-form{
+                    width: 18rem;
+                }
+            }
+            .help{
+                font-size: 1.7rem;   
+            }
+        }
+    }
+}
+@media (max-width:1450px){
+    header{
+        .left-container{
+            .logo{
+                width: 22rem;
+            }
+            .search-bar{
+                #search-form{
+                    width: 16rem;
+                }
+            }
+            .help{
+                top: -1rem;
+                font-size: 1.5rem;   
+            }
+        }
+    }
+}
+@media (max-width:1340px){
+    header{
+        .left-container{
+            .logo{
+                width: 20rem;
+            }
+            .search-bar{
+                #search-form{
+                    width: 14rem;
+                }
+            }
+            .help{
+                font-size: 1.3rem;   
+            }
+        }
+        .right-container{    
+            .login-section{
+                padding:0 0rem 0 0rem;
+                
+                .buttons{
+                    a{
+                        margin-right: 1rem;
+                        padding: .5rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:1250px){
+    header{
+        .left-container{
+            flex-basis: 60%;
+            .logo{
+                width: 25rem;
+            }
+            .search-bar{
+                #search-form{
+                    width: 20rem;
+                }
+            }
+            .help{
+                top: 0rem;
+                font-size: 1.3rem;   
+            }
+        }
+        .right-container{    
+            flex-basis: 40%;
+            .login-section{
+                padding:0 0rem 0 0rem;
+                
+                .buttons{
+                    position: absolute;
+                    display: none;
+                }
+            }
+            .profile-section{
+                margin-left: 5rem;
+            }
+        }
+        .bar{
+            display: block;
+        }
+    }
+}
+@media (max-width:1150px){
+    header{
+        .left-container{
+            flex-basis: 65%;
+            .logo{
+                width: 20rem;
+            }
+            .search-bar{
+                #search-form{
+                    width: 18rem;
+                }
+            }
+        }
+        .right-container{  
+            border: 1px solid #000;  
+            flex-basis: 35%;
+            .login-section{
+                .buttons{
+                    position: absolute;
+                    display: none;
+                }
+            }
+            .profile-section{
+                margin-left: 3rem;
+            }
+        }
+        .bar{
+            margin-right: 4rem;
+            margin-left: 2rem;
+        }
+    }
+}
+@media (max-width:980px){
+    header{
+        .left-container{
+            flex-basis: 65%;
+            .logo{
+                width: 20rem;
+            }
+            .search-bar{
+                #search-form{
+                    width: 18rem;
+                }
+            }
+        }
+        .right-container{    
+            flex-basis: 35%;
+            .login-section{
+                .buttons{
+                    position: absolute;
+                    display: none;
+                }
+            }
+            .profile-section{
+                margin-left: 3rem;
+            }
+        }
+        .bar{
+            
+        margin-right: 2rem;
+        margin-left: 2rem;
+        }
+    }
+}

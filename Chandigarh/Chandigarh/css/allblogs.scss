@@ -1,0 +1,104 @@
+@import './global';
+@import './header';
+@import './login';
+@import './footer';
+.main-container{
+    background: rgba(212, 212, 212,.9);
+}
+main{
+
+        .row-1{
+
+            .innerBlogContainer{
+                width: 90.5%;
+                margin: 5rem auto;
+                display: grid;
+                grid-template-columns: repeat(3, minmax(40rem,1fr));
+                grid-column-gap: 9rem;
+                grid-row-gap: 5rem;
+                
+                .blog{
+                    height: 35rem;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+                    position: relative;
+                    display: block;
+                    top: 0;
+                    color: #000;
+                    cursor: pointer;
+                    transition: all .1s;
+                    
+                    &:hover{
+                        top: -10px;
+                    }
+    
+                    .blogImg{
+                        height: 70%;
+                        overflow: hidden;
+    
+                        img{
+                            width: 100%;
+                            transition: all 1s;
+                            &:hover{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+    
+                    .blogData{
+                        height: 30%;
+                        display: grid;
+                        grid-template-columns: repeat(3,1fr);
+                        grid-template-rows: repeat(3,1fr);
+                        overflow: hidden;
+    
+                        h1{
+                            grid-column: 1 / 4;
+                            grid-row: 1 / 2;
+                            display: block;
+                            padding: .8rem 1rem 0;
+                            font-size: 2.8rem;
+    
+                            span{
+                                float: right;
+                                font-size: 1.7rem;
+                                padding: .5rem;
+                                color: rgb(73, 73, 73);
+                            }
+                        }
+                        p{
+                            grid-column: 1 / 3;
+                            grid-row: 2 / 4;
+                            display: block;
+                            padding: .5rem 1rem;
+                            color: rgb(73, 73, 73);
+                        }
+                        div{
+                            grid-column: 3 / 4;
+                            grid-row: 2 / 4;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            padding-right: 1rem;
+    
+                            span{
+                                padding-right:.8rem;
+    
+                                strong{
+                                    color: var(--blue);
+                                }
+    
+                            }
+                            img{
+                                width: 4rem;
+                                height: 5rem;
+                                border-radius: 50%;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    
+}

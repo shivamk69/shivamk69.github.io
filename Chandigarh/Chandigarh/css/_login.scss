@@ -1,0 +1,300 @@
+.log-background{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, .93);
+    z-index: 9999;
+    transition: all .6s;
+    opacity: 0;
+    visibility: hidden;
+
+    .x-btn{
+        width: 8rem;
+        height: 8rem;
+        position: absolute;
+        top: 5rem;
+        right: 5rem;
+        cursor: pointer;
+
+        span{
+            display: block;
+            width: 100%;
+            height: .7rem;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transition: all .4s;
+
+            &:first-child{
+                background: rgb(255, 0, 0);
+                transform: rotate(-45deg);
+            }
+            &:last-child{
+                background: rgb(0, 255, 0);
+                transform: rotate(45deg);
+            }
+        }
+
+        &:hover span:first-child{
+            background: rgb(0, 255, 0);
+            transform: rotate(135deg);
+        }
+        &:hover span:last-child{
+            background:rgb(255, 0, 0);
+            transform: rotate(-135deg);
+        }
+
+        // &.close{
+        //     span{
+        //         width: 0;
+        //         left: 50%;
+        //     }
+        // }
+
+
+    }
+    
+    .log-container{
+        width: 45rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: rgba(255, 255, 255, 1);
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 1.5rem 0;
+
+        .log-button-container{
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .log-buttons{
+                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 2rem;
+                border: none;
+                overflow: hidden;
+                position: relative;
+                background: rgb(255, 0, 0);
+                box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+                
+                .backAni{
+                    width: 52%;
+                    height: 150%;
+                    background: rgb(19, 233, 12);
+                    position: absolute;
+                    transition: all .5s ease;
+                    left: -10px;
+                    bottom: -1rem;
+                    transform: skewX(-35deg);
+                    border-left: 4px solid #fff;
+                    border-right: 4px solid #fff;
+                }
+                
+                button{
+                    width: 100%;
+                    font-size: 2rem;
+                    padding: 1rem;
+                    border: none;
+                    z-index: 2;
+                    background: transparent;
+                    outline: none;
+                    cursor: pointer;
+                    color: #000;
+                    font-weight: 600;
+                    transition: color .5s;
+
+                    &:last-child{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .log-body-container{
+            height: 28rem;
+            position: relative;
+            transition: height .8s;
+            user-select: none;
+            
+            .login-container{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                transition: all .5s;
+                padding: 2.5rem 4rem;
+
+                form{
+                    height: 100%;
+
+                    .form-group{
+                        font-size: 1.6rem;
+                        margin-bottom: 1.5rem;
+
+                        &:nth-child(3){
+                            margin-top: 2.5rem;
+                        }
+
+                        input{
+                            width: 100%;
+                            font-size: 1.6rem;
+                            padding: 1rem 1rem;
+                            border: none;
+                            border-bottom: 2px solid #000;
+                            outline: none;
+                            transition: all .3s;
+                            background: transparent;
+
+                            &.success{
+                                border-bottom: 2px solid rgb(0, 255, 0);
+                            }
+                            &.error{
+                                border-bottom: 2px solid rgb(255, 0, 0);
+                            }
+
+                            &::placeholder{
+                                color: #000;
+                                transition: all .5s;
+                            }
+
+                            &:focus::placeholder{
+                                opacity: 0;
+                            }
+
+                            &[type="submit"]{
+                                border: none;
+                                width: 70%;
+                                display: flex;
+                                justify-content: center;
+                                margin: 0 auto;
+                                border-radius: 2rem;
+                                transition: all .5s;
+                                box-shadow: 0 0 19px rgba(0, 0, 0, 0.3);
+                                cursor: pointer;
+                                background: rgb(0, 238, 255);
+                                font-weight: 600;
+                                color: #fff;
+                                font-size: 1.8rem;
+
+                                &:hover{
+                                    background: rgb(32, 169, 179);
+                                }
+                            }
+                        }
+                        span{
+                            display: block;
+                            height: 2rem;
+                            padding: .3rem 0rem 0 1rem;
+                            font-size: 1.5rem;
+                            color: red;
+                            letter-spacing: .2rem;
+                        }
+                        &:last-child{
+                            margin-top: 2.5rem;
+                        }
+                        a{
+                            display: block;
+                            text-align: end;
+                            transition: all .3s ease-in;
+
+                            &:hover{
+                                letter-spacing: .2rem;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .signin-container{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 100%;
+                transition: all .5s;
+                padding: 1rem 4rem;
+
+                form{
+                    height: 100%;
+
+                    .form-group{
+                        font-size: 1.7rem;
+                        margin-bottom: 1.5rem;
+
+                        label{
+                            display: inline-block;
+                            position: relative;
+                            bottom: -2.5rem;
+                            left: 1rem;
+                            color: rgba(0, 0, 0, 0.603);
+                            transition: all .3s;
+                            cursor: text;
+
+
+                            &#fileLabel{
+                                padding-left: 20rem;
+                            }
+                        }
+
+                        input{
+                            width: 100%;
+                            font-size: 1.5rem;
+                            padding: .55rem 1rem;
+                            border: none;
+                            border-bottom: 2px solid #000;
+                            outline: none;
+                            transition: all .3s;
+                            background: transparent;
+
+                            &.success{
+                                border-bottom: 2px solid rgb(0, 255, 0);
+                            }
+                            &.error{
+                                border-bottom: 2px solid rgb(255, 0, 0);
+                            }
+
+                            &:focus{
+                                border-bottom: 2px solid rgb(0, 217, 255);
+                            }
+
+                            &[type="submit"]{
+                                border: none;
+                                width: 70%;
+                                display: flex;
+                                justify-content: center;
+                                margin: 0 auto;
+                                border-radius: 2rem;
+                                transition: all .5s;
+                                box-shadow: 0 0 19px rgba(0, 0, 0, 0.3);
+                                cursor: pointer;
+                                background: rgb(0, 238, 255);
+                                font-weight: 600;
+                                color: #fff;
+                                font-size: 1.9rem;
+                                padding: 1rem;
+
+                                &:hover{
+                                    background: rgb(32, 169, 179);
+                                }
+                            }
+                        }
+
+                        &:last-child{
+                            margin-top: 2.5rem;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
